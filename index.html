@@ -22,17 +22,18 @@
 <body>
 
 <h1>Privacy Policy for TaskSlice</h1>
-<p class="updated">Last updated: September 22, 2026</p>
+<p class="updated">Last updated: September 26, 2026</p>
 
 <p>TaskSlice ("the app") is developed and operated by an independent developer. This
 policy explains what data the app collects, how it's used, and your choices.</p>
 
 <h2>Information We Collect</h2>
 
-<p><strong>Account information.</strong> To use TaskSlice you must sign in with either
-an email address and password, or your Google account. If you sign in with Google, we
-receive your name, email address, and profile photo as provided by Google. This is used
-only to identify your account.</p>
+<p><strong>Account information.</strong> You can try TaskSlice as a guest, in which case
+an anonymous account ID is created for you and no personal information is collected. You
+can also sign in with an email address and password, or your Google account. If you sign
+in with Google, we receive your name, email address, and profile photo as provided by
+Google. This is used only to identify your account.</p>
 
 <p><strong>Task content.</strong> Text you enter to describe a task is sent to Google's
 Gemini API to generate a step-by-step breakdown. This text is processed by Google to
@@ -41,13 +42,25 @@ request.</p>
 
 <p><strong>Usage data for the free daily limit.</strong> To enforce a free daily limit,
 our server stores your account ID, a randomly generated device identifier, the date, and
-a count of how many breakdowns you've requested. This is used only for quota enforcement
-and is not linked to any other personal information.</p>
+a count of how many breakdowns you've requested. This is used only for quota enforcement,
+is not linked to any other personal information, and is automatically deleted after
+7 days.</p>
 
 <p><strong>Your projects and progress.</strong> Your projects, task breakdowns, and
-completion status are stored locally on your device only. We do not have access to this
-data, and it is not transmitted to or stored on our servers except for the one-time
-processing described above.</p>
+completion status are stored locally on your device. If you have a Pro account, they are
+also synced to Google Cloud Firestore under your account so they're available on your
+other devices; only you can access that copy. For everyone else, this data is not
+transmitted to or stored on our servers except for the one-time processing described
+above.</p>
+
+<p><strong>Voice input.</strong> If you use the microphone button to describe a task, the
+speech is handled by your device's own speech-recognition service (for example, Google's),
+under that provider's privacy policy. TaskSlice only receives the resulting text, which is
+then treated like typed task content.</p>
+
+<p><strong>Text shared into the app.</strong> If you use "Share to TaskSlice" from another
+app, the shared text is placed into a new task for you to review; nothing is sent anywhere
+until you choose to create the breakdown.</p>
 
 <h2>How We Use Information</h2>
 
@@ -66,15 +79,19 @@ except as described above.</p>
   <li><strong>Firebase Authentication</strong> (Google) — handles sign-in</li>
   <li><strong>Google Gemini API</strong> — processes the text of tasks you submit to
   generate breakdowns</li>
+  <li><strong>Google Cloud Firestore</strong> — stores synced projects for Pro accounts
+  only</li>
+  <li><strong>Google Fonts</strong> — the app downloads its typeface from Google's font
+  servers, which receive your device's IP address as part of that request</li>
 </ul>
 
-<p>Both are subject to Google's own privacy policy:
+<p>All are subject to Google's own privacy policy:
 <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
 
 <h2>Data Retention and Deletion</h2>
 
 <p>Your local project data stays on your device until you delete the app or clear its
-data. To request deletion of your account and associated server-side usage data, contact
+data. Signing out of a guest session deletes that guest's projects from the device. To request deletion of your account and associated server-side usage data, contact
 us at the email below.</p>
 
 <h2>Children's Privacy</h2>
